@@ -6,30 +6,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
-
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
 
-public class Main {
-
-	private static void afficherContenu(String path, int profendeur, PrintWriter printer, BufferedReader reader ) throws IOException
-	{
-		System.out.println(path);
-		if(profendeur > 0)
-		{
-			printer.println("list "+path);
-			String content = reader.readLine();
-			while(content != null)
-			{
-				System.out.println(content.replaceAll("\\s+"," "));
-				afficherContenu(path+"/"+content.replaceAll("\\s+"," ").split(" ")[8],profendeur,printer,reader);
-				content = reader.readLine();
-			}
-		}
-	}
-	
+public class Main {	
 	public static void main(String[] args) {
 		
 		try {
@@ -55,29 +37,55 @@ public class Main {
 			printer.println("pwd");
 			content = reader.readLine();
 			System.out.println(content);
+
 			
 			printer.println("PASV");
 			content = reader.readLine();
-			System.out.println(content);
 			
 			String[] pasv = content.split(" ")[4].replace("(","").replace(")","").split(",");
 			
 			String IP = pasv[0]+"."+pasv[1]+"."+pasv[2]+"."+pasv[3];
-			int port = (Integer.parseInt(pasv[4]) * 256) + Integer.parseInt(pasv[5]);			
+			int port = (Integer.parseInt(pasv[4]) * 256) + Integer.parseInt(pasv[5]);	
+			
 			Socket s2 = new Socket(InetAddress.getByName(IP),port);
 			
-			//s.setKeepAlive(true);
-			//System.out.println("ici " + s.getKeepAlive());
-						
-			in = s2.getInputStream();
-			reader = new BufferedReader(new InputStreamReader(in));
+			BufferedReader readerdata = new BufferedReader(new InputStreamReader(s2.getInputStream()));
 					
-			afficherContenu(".",3,printer,reader);
+			printer.println("CWD ./ubuntu");
+			content = reader.readLine();
+			System.out.println(content);
+			printer.println("PWD");
+			content = reader.readLine();
+			System.out.println(content);
 			
+				
+			printer.println("list .");
 			
+			content = reader.readLine();
+			System.out.println(content);
+			content = reader.readLine();
+			System.out.println(content);
 			
-		s2.close();
-		s.close();
+			while((content = readerdata.readLine())!= null)
+			{
+				System.out.println(content);
+			}
+			
+			//System.out.println(s2.isConnected());
+			
+			printer.println("list ./ubuntu");
+			content = reader.readLine();
+			System.out.println(content);
+			content = reader.readLine();
+			System.out.println(content);
+			while((content = readerdata.readLine()) != null)
+			{
+				System.out.println(content.split("\\s+")[8]);
+			}
+			
+			s2.close();
+			s.close();
+			
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
