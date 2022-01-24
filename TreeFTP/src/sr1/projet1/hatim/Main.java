@@ -59,7 +59,7 @@ public class Main {
 
 					display += files.get(i);
 					System.out.println(display);
-					if (profondeur < maxProfondeur) {
+					if (profondeur < maxProfondeur || maxProfondeur == -1) {
 						afficherContent(path + files.get(i) + "/", profondeur + 1, maxProfondeur, s);
 					}
 				}
