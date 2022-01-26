@@ -1,0 +1,47 @@
+@options
+@packages
+@argfile
+-encoding
+'UTF-8'
+-protected
+-source
+'1.7'
+-sourcepath
+'D:/Bureau/SR1/TreeFTP/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'D:/Bureau/SR1/TreeFTP/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'TreeFTP 1.0.3 API'
+-linkoffline
+'https://docs.oracle.com/javase/7/docs/api' 'D:/Bureau/SR1/TreeFTP/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'TreeFTP 1.0.3 API'
+sr1.projet1.hatim
+'D:/Bureau/SR1/TreeFTP/src/main/java/sr1/projet1/hatim/Main.java'
+'D:/Bureau/SR1/TreeFTP/src/main/java/sr1/projet1/hatim/SocketFTP.java'
+D:\Bureau\SR1\TreeFTP\src\main\java = 1643219486365
+D:\Bureau\SR1\TreeFTP\target\site\apidocs\allclasses-index.html = 1643229374279
+D:\Bureau\SR1\TreeFTP\target\site\apidocs\allpackages-index.html = 1643229374281
+D:\Bureau\SR1\TreeFTP\target\site\apidocs\element-list = 1643229374223
+D:\Bureau\SR1\TreeFTP\target\site\apidocs\help-doc.html = 1643229374307
+D:\Bureau\SR1\TreeFTP\target\site\apidocs\index-all.html = 1643229374300
+D:\Bureau\SR1\TreeFTP\target\site\apidocs\index.html = 1643229374302
+D:\Bureau\SR1\TreeFTP\target\site\apidocs\jquery-ui.overrides.css = 1643229374337
+D:\Bureau\SR1\TreeFTP\target\site\apidocs\member-search-index.js = 1643229374284
+D:\Bureau\SR1\TreeFTP\target\site\apidocs\module-search-index.js = 1643229374282
+D:\Bureau\SR1\TreeFTP\target\site\apidocs\overview-tree.html = 1643229374267
+D:\Bureau\SR1\TreeFTP\target\site\apidocs\package-search-index.js = 1643229374283
+D:\Bureau\SR1\TreeFTP\target\site\apidocs\script.js = 1643229374310
+D:\Bureau\SR1\TreeFTP\target\site\apidocs\search.js = 1643229374314
+D:\Bureau\SR1\TreeFTP\target\site\apidocs\stylesheet.css = 1643229374309
+D:\Bureau\SR1\TreeFTP\target\site\apidocs\tag-search-index.js = 1643229374285
+D:\Bureau\SR1\TreeFTP\target\site\apidocs\type-search-index.js = 1643229374284
