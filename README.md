@@ -106,14 +106,14 @@ public static void afficherContent(String path, int profondeur, int maxProfondeu
 
 **Utilisation normale en specifiant une adresse du serveur FTP**
 
-![](./docs/imgs/exemple1.png)
+![](docs/imgs/exemple1.PNG)
 
 
 **En specifiant une profondeur**
 
-![](./docs/imgs/exemple2.png)
+![](docs/imgs/exemple2.PNG)
 
 
 **En utilisant un nom d'utilisateur et un mot de passe**
 
-![](./docs/imgs/exemple3.png)
+![](docs/imgs/exemple3.PNG)
