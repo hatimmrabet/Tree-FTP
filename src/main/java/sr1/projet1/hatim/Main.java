@@ -7,6 +7,14 @@ import java.util.ArrayList;
 
 public class Main {
 
+	/**
+	 * l'affichage du contenue de chaque repertoire
+	 * @param path adresse du repertoire à afficherS
+	 * @param profondeur  profendeur actuel
+	 * @param maxProfondeur profondeur maximal
+	 * @param s socketFTP utilisé pour envoie des commandes
+	 * @throws IOException
+	 */
 	public static void afficherContent(String path, int profondeur, int maxProfondeur, SocketFTP s) throws IOException {
 		String content;
 		ArrayList<String> files = new ArrayList<>();
@@ -107,12 +115,15 @@ public class Main {
 				else
 				{
 					throw new RuntimeException("user ou passwd est incorrect");
+					/** Erreur si le nom d'utilisateur ou le mot de passe sont incorrectes */
 				}
 				s.deconnecter();;
 			} catch (UnknownHostException e) {
-				throw new RuntimeException("L'adresse ftp est inconnue");
+				throw new RuntimeException("l'adresse du serveur FTP est introuvable");
+				/** Erreur si l'adresse du serveur FTP est introuvable */
 			} catch (IOException e) {
 				throw new RuntimeException("Erreur exception");
+				/** Erreur Exception */
 			}
 		}
 

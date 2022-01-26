@@ -14,18 +14,39 @@ public class SocketFTP {
 	PrintWriter printer;
 	BufferedReader reader;
 	
+	/**
+	 * Creation d'un object SocketFTP
+	 * @param adresse du serveur ftp
+	 * @param port du serveur
+	 * @throws UnknownHostException
+	 * @throws IOException
+	 */
 	public SocketFTP(String adresse,int port) throws UnknownHostException, IOException {
 		this.socket = new Socket(adresse,port);
 		this.printer = new PrintWriter(this.socket.getOutputStream(), true);
 		this.reader = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
 	}
 	
+	/**
+	 * Creation d'un object SocketFTP à partir des donnees recu par la commande PASV
+	 * @param adresse IP
+	 * @param port du serveur
+	 * @throws UnknownHostException
+	 * @throws IOException
+	 */
 	public SocketFTP(InetAddress adresse,int port) throws UnknownHostException, IOException {
 		this.socket = new Socket(adresse,port);
 		this.printer = new PrintWriter(this.socket.getOutputStream(), true);
 		this.reader = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
 	}
 	
+	/**
+	 * Se connecter au serveur FTP
+	 * @param username nom d'utilisateur
+	 * @param passwd mot de passe
+	 * @return true si la connecion est bien établie
+	 * @throws IOException
+	 */
 	public boolean login(String username, String passwd) throws IOException
 	{
 		String content;
@@ -45,6 +66,10 @@ public class SocketFTP {
 		return true;
 	}
 	
+	/**
+	 * fermer la socket, le BufferedReader et le printWriter
+	 * @throws IOException
+	 */
 	public void deconnecter() throws IOException
 	{
 		this.printer.close();
